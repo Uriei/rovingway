@@ -201,7 +201,7 @@ class Discord {
     } else {
       activities = [
         {
-          name: "Sinus Ardorum weather forecast...",
+          name: "Rovingway is checking the weather~",
           type: customPresence ? ActivityType.Custom : ActivityType.Watching,
           state: customPresence,
         },

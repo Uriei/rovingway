@@ -401,9 +401,9 @@ function getRedAlertHints(lang: string, redAlertType: IRedAlertType): APIEmbed[]
         description += `- ${line}\n`;
       }
     }
-    description += `\n-# If you find any error with a hint translation, please tell me or open an [issue](https://github.com/Uriei/sinus-bot/issues) on GitHub.`;
+    description += `\n-# If you find any error with a hint translation, please tell me or open an [issue](https://github.com/Uriei/robingway/issues) on GitHub.`;
   } else {
-    description += `Sorry, we don't have the translation for this hint yet.\nYou can contribute by making a screenshot of the hints ingame and opening an [issue](https://github.com/Uriei/sinus-bot/issues) on GitHub with them. Thank you.\n`;
+    description += `Sorry, we don't have the translation for this hint yet.\nYou can contribute by making a screenshot of the hints ingame and opening an [issue](https://github.com/Uriei/robingway/issues) on GitHub with them. Thank you.\n`;
   }
   embed.description = description;
   return [embed];
