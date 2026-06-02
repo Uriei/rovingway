@@ -155,7 +155,7 @@ export default {
           })
           .on("collect", async (c) => {
             if (c.customId === "false_alarm") {
-              await c.deferUpdate();
+              await c.deferUpdate().catch();
               if (c.user.id === interaction.user.id) {
                 await falseAlarm(c);
                 clearTimeout(timeoutRemoveFalseAlarmButton);
@@ -172,7 +172,7 @@ export default {
                 await setFalseAlarmCounter(c, redAlertType, falseAlarmRequests.length);
               }
             } else if (c.customId === "hints") {
-              await c.deferReply({ flags: MessageFlags.Ephemeral });
+              await c.deferReply({ flags: MessageFlags.Ephemeral }).catch();
               const hintsPayload: InteractionReplyOptions = {
                 embeds: getRedAlertHints(c.locale, redAlertType),
                 components: getHintsLangsButtonRow(redAlertType),
@@ -201,7 +201,7 @@ export default {
                   const hintsPayload: InteractionEditReplyOptions = {
                     embeds: getRedAlertHints(lang, redAlertType),
                   };
-                  await c.editReply(hintsPayload);
+                  await c.editReply(hintsPayload).catch();
                   await ch.update({}).catch();
                 }
               });
